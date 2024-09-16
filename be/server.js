@@ -16,7 +16,7 @@ app.use(cors(
             "http://localhost:5000",
             "http://localhost:8000",
             "http://localhost:8080",
-            "https://pxman-adjacent-element-detection-game-paf.vercel.app",
+            "https://pxman-adjacent-element-detection-game.vercel.app",
         ],
     }
 ));
@@ -41,6 +41,10 @@ const scoreSchema = new mongoose.Schema({
 });
 
 const Score = mongoose.model('Score', scoreSchema);
+
+app.get('', (req, res) => {
+    res.send('Hi pxman')
+});
 
 app.get('/', (req, res) => {
     res.send('Hello pxman')
