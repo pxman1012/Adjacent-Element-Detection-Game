@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import GameBoard from '../components/GameBoard';
 import TopScores from '@/components/TopScores';
 
@@ -9,9 +9,7 @@ export default function Home() {
     const [board, setBoard] = useState<number[][]>([]);
     const [clickCount, setClickCount] = useState<number>(0);
     const [reload, setReload] = useState<boolean>(false)
-    // const remainingCells = useRef<number>(0); // Dùng useRef để lưu số lượng phần tử ban đầu
     const [remainingCells, setRemainingCells] = useState<number>(size * size); // Thêm biến lưu số lượng phần tử ban đầu
-
 
     useEffect(() => {
         generateBoard(size);
@@ -20,15 +18,11 @@ export default function Home() {
     useEffect(() => {
         // Kiểm tra nếu tất cả các ô đều đã bị xóa
         if (remainingCells === 0) {
-            // if (remainingCells.current === 0) {
-
-            // generateBoard(size)
             setRemainingCells(-1)
         }
         if (remainingCells === -1) {
             const name = prompt('You win! Enter your name to save your score:');
             if (name) saveScore(name);
-            // setRemainingCells()
             setRemainingCells(-2); 
             setReload(!reload)
         }
@@ -40,7 +34,6 @@ export default function Home() {
         );
         setBoard(newBoard);
         setClickCount(0); // Reset số lần click
-        // remainingCells.current = size * size; // Đặt lại số lượng ô ban đầu
         setRemainingCells(size * size); // Đặt lại số lượng ô ban đầu
     };
 
@@ -67,7 +60,6 @@ export default function Home() {
 
         setBoard(newBoard);
         setClickCount(clickCount + 1);
-        // remainingCells.current -= clearedCells; // Cập nhật số lượng ô còn lại
         setRemainingCells(remainingCells - clearedCells); // Cập nhật số lượng ô còn lại
 
     };
