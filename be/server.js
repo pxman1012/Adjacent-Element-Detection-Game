@@ -8,17 +8,17 @@ const app = express();
 const PORT = 5000;
 
 app.use(cors(
-    // {
-    //     origin: [
-    //         "http://localhost:3000",
-    //         "http://localhost:3001",
-    //         "http://localhost:3002",
-    //         "http://localhost:5000",
-    //         "http://localhost:8000",
-    //         "http://localhost:8080",
-    //         "https://adjacent-element-detection-game-paf.vercel.app",
-    //     ],
-    // }
+    {
+        origin: [
+            "http://localhost:3000",
+            "http://localhost:3001",
+            "http://localhost:3002",
+            "http://localhost:5000",
+            "http://localhost:8000",
+            "http://localhost:8080",
+            "https://adjacent-element-detection-game-paf.vercel.app",
+        ],
+    }
 ));
 app.use(express.json());
 
