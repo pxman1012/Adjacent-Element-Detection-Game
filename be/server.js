@@ -41,6 +41,11 @@ const scoreSchema = new mongoose.Schema({
 
 const Score = mongoose.model('Score', scoreSchema);
 
+// API để lấy 9 kỷ lục click ít nhất của mỗi size (2-10)
+app.get('/', async (req, res) => {
+    res.send('Hello pxman')
+});
+
 app.post('/save-score', async (req, res) => {
     const { name, size, clicks } = req.body;
     const newScore = new Score({ name, size, clicks });
