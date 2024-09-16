@@ -49,10 +49,15 @@ app.get('/', (req, res) => {
 });
 
 app.post('/save-score', async (req, res) => {
-    const { name, size, clicks } = req.body;
-    const newScore = new Score({ name, size, clicks });
-    await newScore.save();
-    res.status(201).send('Score saved');
+    try {
+        const { name, size, clicks } = req.body;
+        const newScore = new Score({ name, size, clicks });
+        await newScore.save();
+        res.status(201).send('Score saved');
+    } catch (error) {
+        console.error('Error save scores:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
 });
 
 // API để lấy 9 kỷ lục click ít nhất của mỗi size (2-10)
