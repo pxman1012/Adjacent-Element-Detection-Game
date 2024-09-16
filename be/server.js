@@ -16,7 +16,7 @@ app.use(cors(
             "http://localhost:5000",
             "http://localhost:8000",
             "http://localhost:8080",
-            "https://adjacent-element-detection-game-paf.vercel.app",
+            "https://pxman-adjacent-element-detection-game-paf.vercel.app",
         ],
     }
 ));
