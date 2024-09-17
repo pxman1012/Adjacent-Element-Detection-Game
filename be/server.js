@@ -7,21 +7,21 @@ dotenv.config();
 const app = express();
 const PORT = 5000;
 
-// app.use(cors());
+app.use(cors());
 
-app.use(cors(
-    {
-        origin: [
-            "http://localhost:3000",
-            "http://localhost:3001",
-            "http://localhost:3002",
-            "https://adjacent-element-detection-game.vercel.app",
-            "https://pxman-adjacent-element-detection-game.vercel.app",
-        ],
-        methods: ["GET", "POST"],
-        credentials: true, // Cho phép gửi cookie nếu cần
-    }
-));
+// app.use(cors(
+//     {
+//         origin: [
+//             "http://localhost:3000",
+//             "http://localhost:3001",
+//             "http://localhost:3002",
+//             "https://adjacent-element-detection-game.vercel.app",
+//             "https://pxman-adjacent-element-detection-game.vercel.app",
+//         ],
+//         methods: ["GET", "POST"],
+//         credentials: true, // Cho phép gửi cookie nếu cần
+//     }
+// ));
 
 app.use(express.json());
 

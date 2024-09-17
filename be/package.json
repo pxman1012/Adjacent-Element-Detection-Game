@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "deploy": "node server.js",
     "build": "express build --output public",
+    "test": "jest",
     "vercel-build": "echo hello",
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "debug": "node inspect server.js"
   },
   "keywords": [],
   "author": "",
