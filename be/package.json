@@ -1,7 +1,7 @@
 {
   "name": "be",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
     "start": "node server.js",
     "deploy": "node server.js",
