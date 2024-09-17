@@ -7,7 +7,7 @@
     "deploy": "node server.js",
     "build": "express build --output public",
     "start": "node server.js",
-    "vercel-start": "node server.js",
+    "vercel-build": "node server.js",
     "dev": "nodemon server.js"
   },
   "keywords": [],
