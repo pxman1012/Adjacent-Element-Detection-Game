@@ -5,7 +5,7 @@ import * as dotenv from "dotenv";
 dotenv.config();
 
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 8000;
 
 app.use(cors());
 
@@ -23,7 +23,6 @@ app.use(cors());
 //     }
 // ));
 
-app.use(express.json());
 
 // Kết nối tới MongoDB
 mongoose.connect(process.env.NEXT_PUBLIC_MONGODB_URI, {
@@ -37,6 +36,7 @@ db.once("open", () => {
     console.log("Connected to MongoDB");
 });
 
+app.use(express.json());
 const scoreSchema = new mongoose.Schema({
     name: String,
     size: Number,
