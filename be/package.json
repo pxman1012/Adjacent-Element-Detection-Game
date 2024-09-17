@@ -5,6 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
+    "deploy": "node server.js",
     "build": "express build --output public",
     "vercel-build": "echo hello",
     "dev": "nodemon server.js"
