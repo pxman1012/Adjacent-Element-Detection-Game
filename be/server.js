@@ -19,6 +19,7 @@ app.use(cors(
             "https://pxman-adjacent-element-detection-game.vercel.app",
         ],
         methods: ["GET", "POST"],
+        credentials: true, // Cho phép gửi cookie nếu cần
     }
 ));
 
